@@ -27,16 +27,19 @@ var app = {
         // This is an event handler function, which means the scope is the event.
         // So, we must explicitly called `app.report()` instead of `this.report()`.
         app.report('deviceready');
-        document.addEventListener("online", this.onAppIsOnline, false);
-        document.addEventListener("offline", this.onAppIsOffline, false);
-        
+        document.addEventListener("online", app.onAppIsOnline, false);
+        document.addEventListener("offline", app.onAppIsOffline, false);
+        document.getElementById("retryConnection_btn").addEventListener("click", this.retryConnectionHandler, false);
+
         if (navigator.connection.type == 'none') {
-            app.report('OFFLINE');
+            app.onAppIsOffline();
         } else {
-            app.report('ONLINE');
-            document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp';
-            //window.open('http://www.youngevity.reurgency.com/youngevity_dev1_repapp', '-self', null);
+            app.onAppIsOnline();
         }
+    },
+    accessRemoteSite: function(){
+        document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp'; //USE FOR IN BROWSER WITH RIPPLE
+        //window.open('http://www.youngevity.reurgency.com/youngevity_dev1_repapp', '-self', null); //USE FOR ON DEVICE
     },
     report: function(id) {
         // Report the event in the console
@@ -49,31 +52,24 @@ var app = {
             document.querySelector('#' + id + ' .pending').className += ' hide';
             var completeElem = document.querySelector('#' + id + ' .complete');
             completeElem.className = completeElem.className.split('hide').join('');
-        } else {
-            //navigator.notification.alert(
-            //    "Report: " + id,  // message
-            //    this.alertDismissed,   // callback
-            //    'Alert',         // title
-            //    'Ok'            // buttonName
-            //);
         }
-    },
-    alertDismissed: function() {
-        // do something
     },
     onAppIsOnline: function () {
         app.report('online');
-        //document.getElementById("offline_div").style.display == 'none';
-        //if (previousLocation != '') {
-        //    document.location.href = previousLocation;
-        //} else {
-        //    document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp';
-        //}
+        document.getElementById("offline_div").style.display = 'none';
+        document.getElementById("online_div").style.display = 'block';
+        app.accessRemoteSite();
     },
     //Call When app goes offline
     onAppIsOffline: function () {
         app.report('offline');
-        //setAppState(false);
-        //previousLocation = document.location.href;
+        document.getElementById("online_div").style.display = 'none';
+        document.getElementById("offline_div").style.display = 'block';
+    },
+    //Called from offline mode div to re-check connection
+    retryConnectionHandler: function () {
+        if (navigator.connection.type != 'none') {
+            app.onAppIsOnline();
+        }
     }
 };
