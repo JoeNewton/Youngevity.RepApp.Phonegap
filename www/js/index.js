@@ -30,7 +30,7 @@ var app = {
         document.addEventListener("online", app.onAppIsOnline, false);
         document.addEventListener("offline", app.onAppIsOffline, false);
         document.getElementById("retryConnection_btn").addEventListener("click", this.retryConnectionHandler, false);
-		alert(document.location.href);
+		
         if (navigator.connection.type == 'none') {
             app.onAppIsOffline();
         } else {
@@ -38,7 +38,7 @@ var app = {
         }
     },
     accessRemoteSite: function(){
-        //document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp'; //USE FOR IN BROWSER WITH RIPPLE
+        document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp'; //USE FOR IN BROWSER WITH RIPPLE
         //window.open('http://www.youngevity.reurgency.com/youngevity_dev1_repapp', '-self', null); //USE FOR ON DEVICE
     },
     report: function(id) {
