@@ -30,7 +30,7 @@ var app = {
         document.addEventListener("online", app.onAppIsOnline, false);
         document.addEventListener("offline", app.onAppIsOffline, false);
         document.getElementById("retryConnection_btn").addEventListener("click", this.retryConnectionHandler, false);
-		
+		console.log(document.location.href);
         if (navigator.connection.type == 'none') {
             app.onAppIsOffline();
         } else {
