@@ -16,68 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
-    initialize: function() {
-        app.report('initialize');
-		this.bind();
-    },
-    deviceready: function() {
-        // This is an event handler function, which means the scope is the event.
-        // So, we must explicitly called `app.report()` instead of `this.report()`.
-        app.report('deviceready');
-        document.addEventListener("online", app.onAppIsOnline, false);
-        document.addEventListener("offline", app.onAppIsOffline, false);
-        document.getElementById("retryConnection_btn").addEventListener("click", this.retryConnectionHandler, false);
-		
-        if (navigator.connection.type == 'none') {
-            app.onAppIsOffline();
-			app.report('deviceIsOffline');
-        } else {
-            app.onAppIsOnline();
-			app.report('deviceIsOnline');
-        }
-    },
-    accessRemoteSite: function(){
-        document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp'; //USE FOR IN BROWSER WITH RIPPLE
-		app.report('accessRemoteSite');
-        //window.open('http://www.youngevity.reurgency.com/youngevity_dev1_repapp', '-self', null); //USE FOR ON DEVICE
-		//window.plugins.childBrowser.showWebPage("http://www.google.com", { showLocationBar: false });
-    },
-    report: function(id) {
-        // Report the event in the console
-        console.log("Report: " + id);
-        alert("Report: " + id);
-        // Toggle the state from "pending" to "complete" for the reported ID.
-        // Accomplished by adding .hide to the pending element and removing
-        // .hide from the complete element.
-        if (id == 'deviceready') {
-            document.querySelector('#' + id + ' .pending').className += ' hide';
-            var completeElem = document.querySelector('#' + id + ' .complete');
-            completeElem.className = completeElem.className.split('hide').join('');
-        }
-    },
-    onAppIsOnline: function () {
-        app.report('online');
-        document.getElementById("offline_div").style.display = 'none';
-        document.getElementById("online_div").style.display = 'block';
-        app.accessRemoteSite();
-    },
-    //Call When app goes offline
-    onAppIsOffline: function () {
-        app.report('offline');
-        document.getElementById("online_div").style.display = 'none';
-        document.getElementById("offline_div").style.display = 'block';
-    },
-    //Called from offline mode div to re-check connection
-    retryConnectionHandler: function () {
-        if (navigator.connection.type != 'none') {
-            app.onAppIsOnline();
-        }
-    },
-	bind: function() {
-        document.addEventListener('deviceready', function(){
+function initialize(){
+	report('initialize');
+	document.addEventListener(
+		'deviceready', 
+		function(){
 			alert("123");
-		},true);
-		alert('added device ready listener');
-    }
-};
+		},
+		true
+	);
+}
+
+function report(id){
+	// Report the event in the console
+	console.log("Report: " + id);
+	alert("Report: " + id);
+	// Toggle the state from "pending" to "complete" for the reported ID.
+	// Accomplished by adding .hide to the pending element and removing
+	// .hide from the complete element.
+	if (id == 'deviceready') {
+		document.querySelector('#' + id + ' .pending').className += ' hide';
+		var completeElem = document.querySelector('#' + id + ' .complete');
+		completeElem.className = completeElem.className.split('hide').join('');
+	}
+}
