@@ -20,10 +20,6 @@ var app = {
     initialize: function() {
         this.bind();
     },
-    bind: function() {
-        document.addEventListener('deviceready', this.deviceready, false);
-		alert('added device ready listener');
-    },
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
         // So, we must explicitly called `app.report()` instead of `this.report()`.
@@ -76,5 +72,9 @@ var app = {
         if (navigator.connection.type != 'none') {
             app.onAppIsOnline();
         }
+    },
+	bind: function() {
+        document.addEventListener('deviceready', this.deviceready, false);
+		alert('added device ready listener');
     }
 };
