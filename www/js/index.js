@@ -18,7 +18,8 @@
  */
 var app = {
     initialize: function() {
-        this.bind();
+        app.report('initialize');
+		this.bind();
     },
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
