@@ -76,7 +76,7 @@ var app = {
     },
 	bind: function() {
         document.addEventListener('deviceready', function(){
-			alert("123");
+			app.deviceready();
 		},true);
 		alert('added device ready listener');
     }
