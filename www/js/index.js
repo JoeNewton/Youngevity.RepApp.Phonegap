@@ -22,6 +22,7 @@ var app = {
     },
     bind: function() {
         document.addEventListener('deviceready', this.deviceready, false);
+		alert('added device ready listener');
     },
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
@@ -33,19 +34,22 @@ var app = {
 		
         if (navigator.connection.type == 'none') {
             app.onAppIsOffline();
+			app.report('deviceIsOffline');
         } else {
             app.onAppIsOnline();
+			app.report('deviceIsOnline');
         }
     },
     accessRemoteSite: function(){
         document.location.href = 'http://www.youngevity.reurgency.com/youngevity_dev1_repapp'; //USE FOR IN BROWSER WITH RIPPLE
+		app.report('accessRemoteSite');
         //window.open('http://www.youngevity.reurgency.com/youngevity_dev1_repapp', '-self', null); //USE FOR ON DEVICE
 		//window.plugins.childBrowser.showWebPage("http://www.google.com", { showLocationBar: false });
     },
     report: function(id) {
         // Report the event in the console
         console.log("Report: " + id);
-        
+        alert("Report: " + id);
         // Toggle the state from "pending" to "complete" for the reported ID.
         // Accomplished by adding .hide to the pending element and removing
         // .hide from the complete element.
