@@ -74,7 +74,9 @@ var app = {
         }
     },
 	bind: function() {
-        document.addEventListener('deviceready', this.deviceready, false);
+        document.addEventListener('deviceready', function(){
+			alert("123");
+		},true);
 		alert('added device ready listener');
     }
 };
