@@ -16,13 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+function onDeviceReady(){
+	alert('onDeviceReady');
+}
 function initialize(){
 	alert('initialize');
-	document.addEventListener(
-		'deviceready', 
-		function(){
-			alert("123");
-		},
-		true
-	);
+	document.addEventListener('deviceready', onDeviceReady,true);
 }
