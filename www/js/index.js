@@ -28,7 +28,7 @@ var app = {
         document.addEventListener("online", app.onAppIsOnline, false);
         document.addEventListener("offline", app.onAppIsOffline, false);
         document.getElementById("retryConnection_btn").addEventListener("click", this.retryConnectionHandler, false);
-		
+		// check for internet connectivity
         if (navigator.connection.type == 'none') {
             app.onAppIsOffline();
 			app.report('deviceIsOffline');
