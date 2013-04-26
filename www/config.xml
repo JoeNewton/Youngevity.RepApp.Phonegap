@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.youngevity.repapp.mobile"
+        id        = "com.youngevity.apps.90forlifemobile"
         version   = "1.0.0">
 
-    <name>90forLifeMobile</name>
+    <name>90forLife Mobile</name>
 
     <description>
-        Mobile Representative Application for inviting/tracking customers and interfacing with Freedom
+        Mobile Representative Application for inviting/tracking customers and saving customers to device contacts list.
     </description>
 
     <author href="http://youngevity.com" email="support@youngevity.com">
