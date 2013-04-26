@@ -38,10 +38,8 @@ var app = {
         }
     },
     accessRemoteSite: function(){
-        document.location.href = 'http://www.youngevity.reurgency.com/90forLifeMobile/'; //USE FOR IN BROWSER WITH RIPPLE
+        document.location.href = 'https://apps.youngevity.com/90ForLifeMobile/';
 		app.report('accessRemoteSite');
-		//navigator.splashscreen.hide();
-        //window.open('http://www.youngevity.reurgency.com/90forLifeMobile', '-self', null); //USE FOR ON DEVICE
     },
     report: function(id) {
         // Report the event in the console
