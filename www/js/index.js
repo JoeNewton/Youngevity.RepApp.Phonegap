@@ -66,6 +66,7 @@ var app = {
         app.report('offline');
         document.getElementById("online_div").style.display = 'none';
         document.getElementById("offline_div").style.display = 'block';
+		navigator.splashscreen.hide();
     },
     //Called from offline mode div to re-check connection
     retryConnectionHandler: function () {
