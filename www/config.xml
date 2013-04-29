@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<!-- MAKE SURE YOUR ID IS CORRECT -->
+<!-- THE FOLLOWING IS THE APPLE ID -->
+<!-- id        = "com.youngevity.apps.90forLifeMobile"  -->
+<!-- THE FOLLOWING IS THE ANDROID ID -->
+<!-- id        = "com.youngevity.apps.NinetyforLifeMobile"  -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        <!-- THE FOLLOWING IS THE APPLE ID -->
-		<!-- id        = "com.youngevity.apps.90forLifeMobile"  -->
-		<!-- THE FOLLOWING IS THE ANDROID ID -->
-		id        = "com.youngevity.apps.NinetyforLifeMobile"
+        id        = "com.youngevity.apps.NinetyforLifeMobile"
         version   = "1.0.0">
 
     <name>90forLife Mobile</name>
