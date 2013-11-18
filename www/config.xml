@@ -56,7 +56,7 @@
     <!-- Plugins can also be added here. 
 	<gap:plugin name="ChildBrowser" />-->
 	
-	<gap:plugin name="com.adobe.plugins.pushplugin" />
+	<gap:plugin name="PushPlugin" />
 	
     <!--
         <gap:plugin name="Example" />
