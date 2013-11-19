@@ -38,8 +38,9 @@ var app = {
         }
     },
     accessRemoteSite: function(){
-        document.location.href = 'http://www.youngevity.reurgency.com/90forLifeMobile/'; //DEV
-		document.location.href = 'http://appstest.youngevity.com/90forLifeMobile/'; //STAGING
+        //document.location.href = 'http://www.youngevity.reurgency.com/90forLifeMobile/'; //DEV
+		document.location.href = 'http://dev2.youngevity.reurgency.com/90forLifeMobile/'; //DEV
+		//document.location.href = 'http://appstest.youngevity.com/90forLifeMobile/'; //STAGING
 		//document.location.href = 'https://apps.youngevity.com/90ForLifeMobile/'; //PROD
 		app.report('accessRemoteSite');
     },
