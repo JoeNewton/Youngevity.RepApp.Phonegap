@@ -9,7 +9,7 @@ const RemoteServerEnvironment = "Dev2";
  * RemoteServerEnvironment + "_RemoteURL"
  */
 const Dev_RemoteURL     = "http://www.youngevity.reurgency.com/90forLifeMobile#/";
-const Dev2_RemoteURL     = "http://www.youngevity.reurgency.com/90forLifeMobile#/";
+const Dev2_RemoteURL     = "http://dev2.youngevity.reurgency.com/90forLifeMobile#/";
 const Test1_RemoteURL   = "http://test1.youngevity.reurgency.com/90forLifeMobile#/";
 const QA_RemoteURL      = "";
 const Staging_RemoteURL = "http://appstest.youngevity.com/90forLifeMobile/";
