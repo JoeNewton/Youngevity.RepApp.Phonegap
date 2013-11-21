@@ -23,26 +23,28 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Youngevity Mobile Representative Application</title>
     </head>
     <body>
         <div id="online_div" class="app">
-            <h1>Youngevity</h1>
+            <h1 id="config_title"></h1>
             <div id="deviceready">
-                <p class="status pending blink">Configuring Application</p>
-                <p class="status complete blink hide">Configuration Complete</p>
+                <p id="config_msg" class="status pending blink"></p>
+                <p id="configComplete_msg" class="status complete blink hide"></p>
             </div>
         </div>
         <div id="offline_div" class="app" style="display:none">
-            <h1>Offline</h1>
-            <p>This app requires an active internet connection. Please check your connection and try again</p>
-            <button id="retryConnection_btn">Retry</button>
+            <h1 id="offline_title"></h1>
+            <p id="offline_msg"></p>
+            <button id="retryConnection_btn"></button>
         </div>
+        <script type="text/javascript" src="js/config.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-		<script src="phonegap.js"></script>
+		<!--THIS WILL GET INJECTED BY PG BUILD-->
+        <script src="phonegap.js"></script>
+        <!--END-->
         <script type="text/javascript">
+            //INIT THE APP TO BOOTSTRAP PHONEGAP
             app.initialize();
-            //Test
         </script>
 	</body>
 </html>
