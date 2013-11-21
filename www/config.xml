@@ -8,10 +8,10 @@
 <!-- id        = "com.youngevity.apps.NinetyforLifeMobile"  -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.youngevity.apps.90forLifeMobile.Dev2"
+        id        = "com.youngevity.apps.NinetyforLifeMobile.Dev2"
         version   = "1.1.0">
 
-    <name>iOS 90forLife Mobile Dev2</name>
+    <name>Android 90forLife Mobile Dev2</name>
 
     <description>
         Mobile Representative Application for inviting/tracking customers and saving customers to device contacts list.
